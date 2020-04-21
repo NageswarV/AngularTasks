@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <app-user-list
+        [status]="status"
+        (emitId)="showDetails($event)"
+      ></app-user-list>
+    </div>
+    <div class="col-lg-6">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

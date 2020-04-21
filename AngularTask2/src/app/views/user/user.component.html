@@ -1,0 +1,27 @@
+
+<div *ngIf="status !=='manage'">
+    <div class="card" style="width: 80%;border:2px solid green ;margin: 5px 150px;">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.firstName }} {{ user.lastName }}</h5>
+            <button *ngIf="status ==='active'" class="btn btn-danger" style="margin-left: 85%;"(click)="upDateStatus()">
+                Deactivate
+            </button>
+            <button *ngIf="status ==='deleted'" class="btn btn-danger" style="margin-left: 85%;"(click)="upDateStatus()">
+                activate
+            </button>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="status ==='manage' ">
+    <div class="card"
+        [ngStyle]="{'width': '20rem','border':user.isDeleted?'2px solid red':'2px solid green','margin-top': '5px'}">
+        <div class="card-body">
+            <h5 class="card-title">{{ user.firstName }} {{ user.lastName }}</h5>
+            <button (click)="showDetails(user.id)"
+            style="margin-left: 250px;" class="btn btn-primary">
+                Details
+            </button>
+        </div>
+    </div>
+</div>

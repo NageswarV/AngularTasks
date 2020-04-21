@@ -1,0 +1,10 @@
+.UserDeleted{
+    border:'3px solid red';
+     margin-left: '50px';
+      padding: '5px';
+    }
+.UserActive{
+    border: '3px solid green';
+    margin-left: '50px';
+    padding: '5px';
+}
