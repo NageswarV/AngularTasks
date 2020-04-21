@@ -1,0 +1,10 @@
+<div>
+  <form class="container" [formGroup]="editForm">
+    <div>Age <input type="number" formControlName="age" /></div>
+    <div>Password <input type="password" formControlName="password" /></div>
+    <br />
+  </form>
+  <button class="btn btn-default" (click)="editUser()">
+    Submit
+  </button>
+</div>

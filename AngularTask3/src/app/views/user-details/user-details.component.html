@@ -1,0 +1,21 @@
+<div
+  [ngStyle]="{
+    border: user.isDeleted ? '2px solid red' : '2px solid green'
+  }"
+  style="margin-left: '50px'; padding: '3px';"
+>
+  <h3>
+    UserName :
+    {{ user | fullname }}
+  </h3>
+  <div *ngIf="user.isDeleted">
+    <p>Deleted</p>
+  </div>
+  <div *ngIf="!user.isDeleted">
+    <p>Active</p>
+  </div>
+
+  <div>User Id: {{ user?.id }}</div>
+
+  <div>Age: {{ user?.age }}</div>
+</div>

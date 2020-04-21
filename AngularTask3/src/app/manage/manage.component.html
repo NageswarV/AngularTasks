@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-4">
+      <app-user-list
+        [status]="status"
+        (emitId)="showDetails($event)"
+        (updateUserEmit)="editUser($event)"
+      ></app-user-list>
+    </div>
+    <div class="col-lg-6">
+      <router-outlet></router-outlet>
+    </div>
+    <div class="col-lg-2">
+      <button (click)="newUser()" class="btn btn-success">
+        Create
+      </button>
+    </div>
+  </div>
+</div>

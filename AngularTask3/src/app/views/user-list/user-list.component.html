@@ -1,0 +1,24 @@
+<div *ngFor="let user of users">
+  <div *ngIf="!user.isDeleted && status === 'active'">
+    <app-user
+      [status]="status"
+      [user]="user"
+      (statusUpdateEmit)="updateStatus(user.id)"
+    ></app-user>
+  </div>
+  <div *ngIf="user.isDeleted && status === 'deleted'">
+    <app-user
+      [status]="status"
+      [user]="user"
+      (statusUpdateEmit)="updateStatus(user.id)"
+    ></app-user>
+  </div>
+  <div *ngIf="status === 'manage'">
+    <app-user
+      [status]="status"
+      [user]="user"
+      (evntId)="showDetails(user.id)"
+      (updateUserEmit)="updateUser($event)"
+    ></app-user>
+  </div>
+</div>
