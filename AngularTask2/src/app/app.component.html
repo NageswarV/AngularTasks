@@ -1,8 +1,24 @@
-<main class='nave-bar'>
- 
-  <button routerLink='active' RouterLinkActive='active' RouterLinkActiveOptions='{exact:true}'>Active</button>
-  <button routerLink='deleted' RouterLinkActive='active' RouterLinkActiveOptions='{exact:true}'>Deleted</button>
-  <button routerLink='manage' RouterLinkActive='active' RouterLinkActiveOptions='{exact:true}'>manage</button>
-
+<main class="container ml-10 p-5">
+  <button class="btn btn-primary col-lg-2" style="margin-left: 5rem;"
+    routerLink="active"
+    RouterLinkActive="active"
+    RouterLinkActiveOptions="{exact:true}"
+  >
+    Active
+  </button>
+  <button class="btn btn-danger col-lg-2" style="margin-left: 5rem;"
+    routerLink="deleted"
+    RouterLinkActive="active"
+    RouterLinkActiveOptions="{exact:true}"
+  >
+    Deleted
+  </button>
+  <button class="btn btn-info col-lg-2" style="margin-left: 5rem;"
+    routerLink="manage"
+    RouterLinkActive="active"
+    RouterLinkActiveOptions="{exact:true}"
+  >
+    manage
+  </button>
 </main>
 <router-outlet></router-outlet>

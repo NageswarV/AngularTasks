@@ -1,14 +1,12 @@
-<div
+<div class="card"
   [ngStyle]="{ border: user.isDeleted ? '2px solid red' : '3px solid green' }"
   style="margin-left: '50px'; padding: '5px';"
 >
-  <h5>User Name: {{ user?.firstName }} {{ user?.lastName }}</h5>
-  <div *ngIf="user.isDeleted">
-    <p>Deleted</p>
+  <h5 class="card-header">User Name: {{ user?.firstName }} {{ user?.lastName }}</h5>
+  <div class="card-body" *ngIf="user.isDeleted">Deleted
   </div>
-  <div *ngIf="!user.isDeleted">
-    <p>Active</p>
+  <div class="card-body" *ngIf="!user.isDeleted">Active
   </div>
-  <div>User Id: {{ user?.id }}</div>
-  <div>Age: {{ user?.age }}</div>
+  <div class="card-body">User Id: {{ user?.id }}</div>
+  <div class="card-body">Age: {{ user?.age }}</div>
 </div>
