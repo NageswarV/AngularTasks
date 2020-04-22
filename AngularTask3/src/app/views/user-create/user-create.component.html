@@ -1,19 +1,28 @@
 <div class="container">
-  <form class="container" [formGroup]="newForm">
-    <div class="row">
-      User First Name <br /><input type="text" formControlName="firstName" />
+  <form class="card border-0" [formGroup]="newForm">
+    <div class="row m-1">
+      <p class="col-lg-6">User First Name</p>
+      <br /><input class="col-lg-6" type="text" formControlName="firstName" />
     </div>
-    <div class="row">
-     User Last Name <br /><input type="text" formControlName="lastName" />
+    <div class="row m-1">
+      <p class="col-lg-6">User Last Name</p>
+      <br /><input class="col-lg-6" type="text" formControlName="lastName" />
     </div>
-    <div class="row">
-      Username <br /><input type="text" formControlName="login" />
+    <div class="row m-1">
+      <p class="col-lg-6">UsertName</p>
+      <br /><input class="col-lg-6" type="text" formControlName="login" />
     </div>
-    <div class="row">
-      Password <br /><input type="password" formControlName="password" />
+    <div class="row m-1">
+      <p class="col-lg-6">password</p>
+      <br /><input
+        class="col-lg-6"
+        type="password"
+        formControlName="password"
+      />
     </div>
-    <div class="row">
-      Age <br /><input type="number" formControlName="age" />
+    <div class="row m-1">
+      <p class="col-lg-6">Age</p>
+      <br /><input class="col-lg-6" type="number" formControlName="age" />
     </div>
   </form>
   <div style="margin: 10px;">

@@ -1,10 +1,13 @@
-<div>
-  <form class="container" [formGroup]="editForm">
-    <div>Age <input type="number" formControlName="age" /></div>
-    <div>Password <input type="password" formControlName="password" /></div>
-    <br />
+<div class="container">
+  <form class="row card" [formGroup]="editForm">
+    <div class="card-body col-lg-4">Age</div>
+    <input class="col-lg-6" type="number" formControlName="age" />
+    <div class="card-body col-lg-4">Password</div>
+    <input class="col-lg-6" type="password" formControlName="password" />
   </form>
-  <button class="btn btn-default" (click)="editUser()">
-    Submit
-  </button>
+  <div class="row">
+    <button class="btn btn-default" (click)="editUser()">
+      Submit
+    </button>
+  </div>
 </div>
