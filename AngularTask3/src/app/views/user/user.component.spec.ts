@@ -4,17 +4,14 @@ import { UserComponent } from './user.component';
 import {RouterTestingModule} from '@angular/router/testing';
 import {HttpClientTestingModule} from '@angular/common/http/testing';
 import { UserService } from 'src/app/user.service';
-import { of } from 'rxjs';
 describe('UserComponent', () => {
   let component: UserComponent;
   let fixture: ComponentFixture<UserComponent>;
-  let userService : UserService;
-  const userServiceSpy = jasmine.createSpyObj('UserService', ['updateUser']);
-  const getQuoteSpy = userServiceSpy.updateUser.and.returnValue(of([{}]));
+  let userService: UserService;
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserComponent ],
-      providers:[{provide: UserService, useValue: userServiceSpy }],
+      providers:[{provide: UserService}],
       imports:[RouterTestingModule,HttpClientTestingModule]
     })
     .compileComponents();
@@ -28,23 +25,19 @@ describe('UserComponent', () => {
   });
 
   it('should emit event',function(){
-    fixture.detectChanges();
     spyOn(component.evntId,'emit');
-    let eid:number=1;
-    component.showDetails(eid);
-    expect(component.evntId.emit).toHaveBeenCalledWith(eid);
+    component.showDetails(1);
+    expect(component.evntId.emit).toHaveBeenCalledWith(1);
     
   });
   it('should emit event',function(){
-    fixture.detectChanges();
     spyOn(component.statusUpdateEmit,'emit');
     component.upDateStatus()
     expect(component.statusUpdateEmit.emit).toHaveBeenCalled();
   });
   it('should emit event',function(){
     spyOn(component.updateUserEmit,'emit');
-    let eid:number=2;
-    component.updateUser(eid)
-    expect(component.updateUserEmit.emit).toHaveBeenCalledWith(eid);
+    component.updateUser(1)
+    expect(component.updateUserEmit.emit).toHaveBeenCalledWith(1);
   });
 });

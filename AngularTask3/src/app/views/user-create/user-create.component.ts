@@ -17,7 +17,6 @@ export class UserCreateComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
-    console.log('create component');
   }
   newUser() {
     this.userService

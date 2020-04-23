@@ -1,7 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { UserListComponent } from './user-list.component';
-import { of } from 'rxjs';
 import { RouterTestingModule } from '@angular/router/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import {UserService} from '../../user.service'
@@ -9,8 +7,6 @@ describe('UserListComponent', () => {
   let component: UserListComponent;
   let fixture: ComponentFixture<UserListComponent>;
   let usersService: UserService;
-  const userServiceSpy = jasmine.createSpyObj('UsersService', ['getUsers']);
-  const getQuoteSpy = userServiceSpy.getUsers.and.returnValue(of([{}]));
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ UserListComponent ],
@@ -32,24 +28,19 @@ describe('UserListComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  it('should emit id from showdetails',()=>{
-    fixture.detectChanges();
+  it('should emit showdetails event',()=>{
     spyOn(component.emitId, 'emit');
-    let eid:number=8;
-    component.showDetails(eid);
-    expect(component.emitId.emit).toHaveBeenCalledWith(eid);
+    component.showDetails(1);
+    expect(component.emitId.emit).toHaveBeenCalledWith(1);
     
   });
-  it('should emit id from updateUser',()=>{
-    fixture.detectChanges();
+  it('should emit event',()=>{
     spyOn(component.updateUserEmit, 'emit');
-    let eid:number=8;
-    component.updateUser(eid);
-    expect(component.updateUserEmit.emit).toHaveBeenCalledWith(eid);
+    component.updateUser(1);
+    expect(component.updateUserEmit.emit).toHaveBeenCalledWith(1);
     
   });
   it(' ngOnInit should work',()=>{
-    fixture.detectChanges();
     component.ngOnInit();
     expect(component.users).toBeDefined();
 
